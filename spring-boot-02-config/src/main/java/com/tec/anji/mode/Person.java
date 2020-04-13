@@ -3,15 +3,19 @@ package com.tec.anji.mode;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 1. @ConfigurationProperties：用于批量将属性映射成内存对象
+ *  1.1 不支持SpEL表达式
+ */
 @Data
 @ToString
-@Configuration
+@Component
 @ConfigurationProperties("person")
 public class Person {
 

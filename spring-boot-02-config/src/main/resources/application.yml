@@ -11,3 +11,6 @@ person:
   dog:
     name: quange
     age: 2
+
+cat:
+  name: haha
