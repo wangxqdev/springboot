@@ -14,6 +14,7 @@
     <name>springboot</name>
     <packaging>pom</packaging>
 
+    <!--版本控制中心-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
