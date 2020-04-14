@@ -21,7 +21,7 @@ import java.util.Map;
 @ToString
 @Component
 @ConfigurationProperties("person")
-@PropertySource({"classpath:person.properties"})
+//@PropertySource({"classpath:person.properties"})
 public class Person {
 
     private String lastName;

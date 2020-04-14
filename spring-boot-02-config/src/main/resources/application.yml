@@ -1,16 +1,17 @@
-#person:
-#  last-name: wangxqdev
-#  age: 31
-#  boss: true
-#  birthday: 1989/2/22 17:01:00
-#  demo-map: { k1: v1, k2: 18 }
-#  demo-list:
-#    - zhangsan
-#    - lisi
-#    - wangwu
-#  dog:
-#    name: quange
-#    age: 2
+person:
+  last-name: wangxqdev_${random.uuid}
+  age: ${random.int}
+  boss: true
+  birthday: 1989/2/22 17:01:00
+  demo-map: { k1: v1, k2: 18 }
+  demo-list:
+    - zhangsan
+    - lisi
+    - wangwu
+  dog:
+#    ${属性名:默认值}
+    name: ${person.hello:hello}_dog
+    age: 2
 
 cat:
   name: haha
