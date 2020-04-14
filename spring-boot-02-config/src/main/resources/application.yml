@@ -1,16 +1,16 @@
-person:
-  last-name: wangxqdev
-  age: 31
-  boss: true
-  birthday: 1989/2/22 17:01:00
-  demo-map: { k1: v1, k2: 18 }
-  demo-list:
-    - zhangsan
-    - lisi
-    - wangwu
-  dog:
-    name: quange
-    age: 2
+#person:
+#  last-name: wangxqdev
+#  age: 31
+#  boss: true
+#  birthday: 1989/2/22 17:01:00
+#  demo-map: { k1: v1, k2: 18 }
+#  demo-list:
+#    - zhangsan
+#    - lisi
+#    - wangwu
+#  dog:
+#    name: quange
+#    age: 2
 
 cat:
   name: haha
