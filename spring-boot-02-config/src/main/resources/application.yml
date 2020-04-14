@@ -15,3 +15,11 @@ person:
 
 cat:
   name: haha
+
+# 1. 启动参数：--spring.profiles.active=
+# 2. 虚拟机参数：-Dspring.profiles.active=
+# 3. yml片段：---
+# 4. application-{profiles}.yml
+spring:
+  profiles:
+    active: prod
