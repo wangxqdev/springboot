@@ -20,6 +20,7 @@ cat:
 # 2. 虚拟机参数：-Dspring.profiles.active=
 # 3. yml片段：---
 # 4. application-{profiles}.yml
+# 5. 启动参数：--spring.config.location=
 spring:
   profiles:
     active: prod
