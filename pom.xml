@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.tec.anji</groupId>
     <artifactId>springboot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-boot-01-helloworld</module>
         <module>spring-boot-02-config</module>
+        <module>spring-boot-03-logging</module>
     </modules>
 
     <name>springboot</name>
