@@ -1,3 +1,5 @@
+debug: true
+
 person:
   last-name: wangxqdev_${random.uuid}
   age: ${random.int}
