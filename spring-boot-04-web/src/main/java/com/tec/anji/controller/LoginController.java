@@ -11,7 +11,7 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
-    @PostMapping("/user/login")
+    @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Map<String, Object> map, HttpSession session) {
         if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
             session.setAttribute("loginUser", username);
