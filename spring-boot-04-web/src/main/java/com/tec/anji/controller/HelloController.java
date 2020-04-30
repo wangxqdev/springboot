@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Arrays;
 import java.util.Map;
 
-@RequestMapping("/web")
 @Controller
-public class SuccessController {
+public class HelloController {
 
     @RequestMapping("/success")
     public String success(Map<String, Object> data) {
