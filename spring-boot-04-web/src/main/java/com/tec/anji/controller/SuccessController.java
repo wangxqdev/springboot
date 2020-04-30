@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Arrays;
 import java.util.Map;
 
-/**
- * 1. 配置详见：ThymeleafProperties
- */
 @RequestMapping("/web")
 @Controller
 public class SuccessController {
