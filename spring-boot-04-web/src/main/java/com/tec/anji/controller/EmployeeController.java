@@ -12,15 +12,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
+/**
+ * @author Administrator
+ */
 @Slf4j
 @Controller
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeDao employeeDao;
+    private final EmployeeDao employeeDao;
 
-    @Autowired
-    private DepartmentDao departmentDao;
+    private final DepartmentDao departmentDao;
+
+    public EmployeeController(EmployeeDao employeeDao, DepartmentDao departmentDao) {
+        this.employeeDao = employeeDao;
+        this.departmentDao = departmentDao;
+    }
 
     @GetMapping("/emps")
     public String list(Model model) {
