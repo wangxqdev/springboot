@@ -18,6 +18,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 3. MVC自动配置
  *  3.1 https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc
  *  3.1 WebMvcAutoConfiguration.class
+ * 4. 自定义异常处理
+ *  4.1 ErrorPageCustomizer => 注册错误处理页面(/error/**)
+ *  4.2 BasicErrorController
+ *   4.2.1 处理/error请求
+ *   4.2.2 映射text/html请求路径 => errorHtml()
+ *      1) 有模板引擎：/templates/error/4xx.html|5xx.html
+ *      2) 无模板引擎：/error/4xx.html|5xx.html
+ *      3) 框架自带错误页面
+ *   4.2.3 映射json/application请求路径 => error()
+ *  4.3 DefaultErrorViewResolver
+ *  4.4 DefaultErrorAttributes
  */
 @SpringBootApplication
 public class WebMainApplication {
