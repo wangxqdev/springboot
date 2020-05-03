@@ -29,6 +29,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *   4.2.3 映射json/application请求路径 => error()
  *  4.3 DefaultErrorViewResolver
  *  4.4 DefaultErrorAttributes
+ * 5. 嵌入式容器配置步骤
+ *  5.1 EmbeddedServletContainerAutoConfiguration.tomcatEmbeddedServletContainerFactory() => 创建构建Tomcat工厂方法
+ *  5.2 EmbeddedServletContainerCustomizerBeanPostProcessor.postProcessBeforeInitialization() => 从容器中获取所有定制器并调用custom()方法(默认定制器ServerProperties)
+ * 6. 嵌入式容器启动步骤
+ *  5.1 SpringApplication.createApplicationContext() => 根据环境定义创建IOC容器
+ *  5.2 AbstractApplicationContext.refresh() => 刷新IOC容器
+ *  5.3 EmbeddedWebApplicationContext.createEmbeddedServletContainer()
+ *      1) getEmbeddedServletContainerFactory() => 获取构建Tomcat工厂方法
+ *      2) EmbeddedServletContainerFactory.getEmbeddedServletContainer() => 构建Tomcat并启动
  */
 @SpringBootApplication
 public class WebMainApplication {
