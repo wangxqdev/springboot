@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-04-web</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>

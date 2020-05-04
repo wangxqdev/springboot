@@ -12,6 +12,7 @@
         <module>spring-boot-02-config</module>
         <module>spring-boot-03-logging</module>
         <module>spring-boot-04-web</module>
+        <module>spring-boot-05-jsp</module>
     </modules>
 
     <name>springboot</name>
