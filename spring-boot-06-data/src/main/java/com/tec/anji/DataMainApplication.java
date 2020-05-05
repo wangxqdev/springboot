@@ -13,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *  1.3 JdbcTemplateAutoConfiguration
  *      1.3.1 JdbcTemplate
  *      1.3.2 NamedParameterJdbcTemplate
+ * 2. Druid整合
+ *  2.1 监控地址：http://localhost:8080/druid/
  */
 @SpringBootApplication
 public class DataMainApplication {
