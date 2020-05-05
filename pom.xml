@@ -21,6 +21,7 @@
 
     <properties>
         <mysql.version>8.0.20</mysql.version>
+        <druid.version>1.1.8</druid.version>
     </properties>
 
     <!--版本控制中心-->
