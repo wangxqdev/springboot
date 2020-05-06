@@ -1,5 +1,6 @@
 package com.tec.anji;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 2. Druid整合
  *  2.1 监控地址：http://localhost:8080/druid/
  */
+@MapperScan("com.tec.anji.mapper")
 @SpringBootApplication
 public class DataMainApplication {
 

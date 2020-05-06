@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tec.anji.mapper.EmployeeMapper">
+    <!--增-->
+    <insert id="insertEmp" parameterType="com.tec.anji.bean.Employee" keyProperty="id" useGeneratedKeys="true">
+        insert into employee(last_name, email, gender, d_id) values(#{lastName}, #{email}, #{gender}, #{dId})
+    </insert>
+    <!--删-->
+    <delete id="deleteEmpById" parameterType="int">
+        delete from employee where id = #{id}
+    </delete>
+    <!--改-->
+    <update id="updateEmp" parameterType="com.tec.anji.bean.Employee">
+        update emp set last_name = #{lastName}, email = #{email}, gender = #{gender}, d_id = #{dId} where id = #{id}
+    </update>
+    <!--查-->
+    <select id="getEmpById" parameterType="int">
+        select * from employee where id = #{id}
+    </select>
+</mapper>
