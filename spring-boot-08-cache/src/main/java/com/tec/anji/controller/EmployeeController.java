@@ -2,6 +2,7 @@ package com.tec.anji.controller;
 
 import com.tec.anji.bean.Employee;
 import com.tec.anji.mapper.EmployeeMapper;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,6 +31,7 @@ public class EmployeeController {
         return employeeMapper.updateEmp(employee);
     }
 
+    @Cacheable(cacheNames = {"emp"})
     @GetMapping("/{id}")
     public Employee getEmpById(@PathVariable int id) {
         return employeeMapper.getEmpById(id);
