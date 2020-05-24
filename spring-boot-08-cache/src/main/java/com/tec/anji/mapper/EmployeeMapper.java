@@ -18,4 +18,7 @@ public interface EmployeeMapper {
 
     @Select("select * from employee where id = #{id}")
     Employee getEmpById(int id);
+
+    @Select("select * from employee where email like concat('%', #{email}, '%')")
+    Employee getEmpByEmail(String email);
 }

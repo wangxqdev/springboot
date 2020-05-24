@@ -2,11 +2,12 @@ package com.tec.anji.controller;
 
 import com.tec.anji.bean.Employee;
 import com.tec.anji.mapper.EmployeeMapper;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CacheConfig(cacheNames = {"emp"})
 @RestController
 @RequestMapping("/emp")
 public class EmployeeController {
@@ -24,11 +25,12 @@ public class EmployeeController {
     }
 
     /**
-     * @CacheEvict在方法执行之后调用，可以通过配置beforeInvocation改变执行顺序
+     * 注解@CacheEvict在方法执行之后调用，可以通过配置beforeInvocation改变执行顺序
+     *
      * @param id
      * @return
      */
-    @CacheEvict(cacheNames = {"emp"}, key = "#id")
+    @CacheEvict(key = "#id")
     @DeleteMapping("/{id}")
     public int deleteEmpById(@PathVariable int id) {
         boolean debug = true;
@@ -36,24 +38,36 @@ public class EmployeeController {
     }
 
     /**
-     * @CachePut在方法执行后调用
+     * 注解@CachePut在方法执行后调用
+     *
      * @param employee
      * @return
      */
-    @CachePut(cacheNames = {"emp"}, key = "#employee.id")
+    @CachePut(key = "#employee.id")
     @PutMapping
     public Employee updateEmp(@RequestBody Employee employee) {
         return 1 == employeeMapper.updateEmp(employee) ? getEmpById(employee.getId()) : null;
     }
 
     /**
-     * @Cacheable在方法执行前调用
+     * 注解@Cacheable在方法执行前调用
+     *
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = {"emp"}, condition = "#id > 1")
+    @Cacheable(key = "#id", condition = "#id > 1")
     @GetMapping("/{id}")
     public Employee getEmpById(@PathVariable int id) {
         return employeeMapper.getEmpById(id);
+    }
+
+    @Caching(cacheable = {
+            @Cacheable(key = "#email")
+    }, put = {
+            @CachePut(key = "#result.id")
+    })
+    @GetMapping("/email/{email}")
+    public Employee getEmpByLastName(@PathVariable String email) {
+        return employeeMapper.getEmpByEmail(email);
     }
 }
