@@ -2,6 +2,7 @@ package com.tec.anji.controller;
 
 import com.tec.anji.bean.Employee;
 import com.tec.anji.mapper.EmployeeMapper;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +23,16 @@ public class EmployeeController {
         return employee;
     }
 
+    /**
+     * @CacheEvict在方法执行之后调用，可以通过配置beforeInvocation改变执行顺序
+     * @param id
+     * @return
+     */
+    @CacheEvict(cacheNames = {"emp"}, key = "#id")
     @DeleteMapping("/{id}")
     public int deleteEmpById(@PathVariable int id) {
-        return employeeMapper.deleteEmpById(id);
+        boolean debug = true;
+        return debug ? 1 : employeeMapper.deleteEmpById(id);
     }
 
     /**
