@@ -13,7 +13,7 @@ public interface EmployeeMapper {
     @Delete("delete from employee where id = #{id}")
     int deleteEmpById(int id);
 
-    @Update("update emp set last_name = #{lastName}, email = #{email}, gender = #{gender}, d_id = #{dId} where id = #{id}")
+    @Update("update employee set last_name = #{lastName}, email = #{email}, gender = #{gender}, d_id = #{dId} where id = #{id}")
     int updateEmp(Employee employee);
 
     @Select("select * from employee where id = #{id}")
