@@ -2,8 +2,11 @@ package com.tec.anji.controller;
 
 import com.tec.anji.bean.Department;
 import com.tec.anji.mapper.DepartementMapper;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
+@CacheConfig(cacheNames = {"dept"}, cacheManager = "departmentCacheManager")
 @RestController
 @RequestMapping("/dept")
 public class DepartmentController {
@@ -20,6 +23,7 @@ public class DepartmentController {
         return department;
     }
 
+    @Cacheable(key = "#id")
     @GetMapping("/{id}")
     public Department getDeptById(@PathVariable int id) {
         return departementMapper.getDeptById(id);

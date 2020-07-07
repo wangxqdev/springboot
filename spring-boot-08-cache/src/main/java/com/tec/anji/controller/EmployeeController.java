@@ -5,8 +5,6 @@ import com.tec.anji.mapper.EmployeeMapper;
 import org.springframework.cache.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CacheConfig(cacheNames = {"emp"})
 @RestController
 @RequestMapping("/emp")
