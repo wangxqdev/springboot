@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>order</module>
-        <module>user</module>
+        <module>dubbo-order</module>
+        <module>dubbo-user</module>
     </modules>
 
     <properties>

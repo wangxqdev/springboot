@@ -20,6 +20,7 @@
         <module>spring-boot-11-task</module>
         <module>spring-boot-12-security</module>
         <module>spring-boot-13-dubbo</module>
+        <module>spring-boot-14-eureka</module>
     </modules>
 
     <name>springboot</name>
@@ -33,12 +34,24 @@
         <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
     </properties>
 
-    <!--版本控制中心-->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
-    </parent>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>1.5.9.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
