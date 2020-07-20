@@ -13,8 +13,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
-        <thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+        <jquery.version>3.5.0</jquery.version>
+        <bootstrap.version>4.4.1</bootstrap.version>
     </properties>
 
     <dependencies>
@@ -38,13 +38,13 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.5.0</version>
+            <version>${jquery.version}</version>
         </dependency>
         <!--bootstrap-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>4.4.1</version>
+            <version>${bootstrap.version}</version>
         </dependency>
         <!--thymeleaf-->
         <dependency>
