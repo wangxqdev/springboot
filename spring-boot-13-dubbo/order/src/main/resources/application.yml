@@ -1,0 +1,7 @@
+dubbo:
+  application:
+    name: order
+  registry:
+    address: zookeeper://192.168.137.99:2181
+  scan:
+    base-packages: com.tec.anji.service

@@ -19,6 +19,7 @@
         <module>spring-boot-10-elastic</module>
         <module>spring-boot-11-task</module>
         <module>spring-boot-12-security</module>
+        <module>spring-boot-13-dubbo</module>
     </modules>
 
     <name>springboot</name>
