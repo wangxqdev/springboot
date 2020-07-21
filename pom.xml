@@ -21,6 +21,7 @@
         <module>spring-boot-12-security</module>
         <module>spring-boot-13-dubbo</module>
         <module>spring-boot-14-eureka</module>
+        <module>spring-boot-15-actuator</module>
     </modules>
 
     <name>springboot</name>
@@ -54,6 +55,12 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
